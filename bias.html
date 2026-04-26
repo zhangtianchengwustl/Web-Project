@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How Bias Enters Data Systems | Algorithmic Signals and Social Inequality</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark">AS</span>
+        <span class="brand-text">Algorithmic Signals Lab</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="signals.html">Signals &amp; Data</a>
+        <a class="active" href="bias.html">Bias</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Page 2</p>
+          <h1>How Bias Enters Data Systems</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="bias-grid">
+          <article class="card icon-card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20V6l8-3 8 3v14"></path>
+                <path d="M9 10h6M9 14h6"></path>
+              </svg>
+            </div>
+            <h3>Historical Bias</h3>
+            <p>Past inequality becomes part of the data.</p>
+            <p class="small-note">
+              Example: If a company historically hired mostly men for technical roles, a hiring algorithm may learn that male applicants are more successful candidates.
+            </p>
+          </article>
+
+          <article class="card icon-card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v18M3 12h18"></path>
+                <circle cx="12" cy="12" r="8"></circle>
+              </svg>
+            </div>
+            <h3>Measurement Bias</h3>
+            <p>The data collected may not accurately represent reality.</p>
+            <p class="small-note">
+              Example: Arrest records do not simply measure crime. They also reflect policing patterns, neighborhood surveillance, and enforcement priorities.
+            </p>
+          </article>
+
+          <article class="card icon-card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h6M13 12h6"></path>
+                <path d="M8 8l-3 4 3 4M16 8l3 4-3 4"></path>
+              </svg>
+            </div>
+            <h3>Proxy Bias</h3>
+            <p>A system may avoid using sensitive categories directly but still rely on related signals.</p>
+            <p class="small-note">
+              Example: Even if race is not included in a credit algorithm, ZIP code, income, or education history may act as proxies for race or class.
+            </p>
+          </article>
+
+          <article class="card icon-card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3a9 9 0 1 0 9 9"></path>
+                <path d="M12 7v6l4 2"></path>
+              </svg>
+            </div>
+            <h3>Feedback Loops</h3>
+            <p>Algorithmic decisions can create new data that reinforces the original system.</p>
+            <p class="small-note">
+              Example: If predictive policing sends more officers to one neighborhood, more arrests may be recorded there, making the algorithm believe the area is even higher risk.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Created for a project on signals, data, and equity.</p>
+      <p>This resource is intended for educational use.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

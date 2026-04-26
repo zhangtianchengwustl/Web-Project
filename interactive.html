@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Try It: How Signals Affect Decisions | Algorithmic Signals and Social Inequality</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark">AS</span>
+        <span class="brand-text">Algorithmic Signals Lab</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="signals.html">Signals &amp; Data</a>
+        <a href="bias.html">Bias</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Page 5</p>
+          <h1>Try It: How Signals Affect Decisions</h1>
+          <p>Build intuition by changing ranking goals and observing the output.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>Applicant A</th>
+                <th>Applicant B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>College degree</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Employment gap</td>
+                <td>No</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Previous tech job</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Lives near company</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="interactive-panel">
+          <button id="score-button" class="button button-primary" type="button">Run Sample Scoring</button>
+          <p id="score-output" class="score-output" aria-live="polite">Click the button to compare scores.</p>
+          <p class="small-note">
+            The algorithm may rank Applicant A higher, but this does not necessarily mean Applicant A has more potential. Applicant B's signals may reflect unequal access to education, transportation, or previous opportunities.
+          </p>
+          <p class="reflection"><strong>Reflection question:</strong> When does a neutral signal become unfair?</p>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="section-head">
+          <h2>Ranking Sandbox</h2>
+          <p>Adjust weights and compare ranking outcomes for the same content set.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="card">
+            <h3>Weight Controls</h3>
+            <label class="range-label">Engagement weight <span id="label-engage">0.70</span></label>
+            <input id="w-engage" type="range" min="0" max="1" step="0.01" value="0.70">
+
+            <label class="range-label">Quality weight <span id="label-quality">0.10</span></label>
+            <input id="w-quality" type="range" min="0" max="1" step="0.01" value="0.10">
+
+            <label class="range-label">Risk penalty <span id="label-risk">0.05</span></label>
+            <input id="w-risk" type="range" min="0" max="1" step="0.01" value="0.05">
+
+            <label class="range-label">Diversity weight <span id="label-diversity">0.15</span></label>
+            <input id="w-diversity" type="range" min="0" max="1" step="0.01" value="0.15">
+
+            <div class="mode-row">
+              <button class="button button-secondary mode-button" data-mode="engagement" type="button">Engagement only</button>
+              <button class="button button-secondary mode-button" data-mode="quality" type="button">Engagement + quality</button>
+              <button class="button button-secondary mode-button" data-mode="fairness" type="button">Engagement + quality + fairness</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Live Ranking Output</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Candidate</th>
+                    <th>Engagement</th>
+                    <th>Quality</th>
+                    <th>Risk</th>
+                    <th>Diversity</th>
+                    <th>Final score</th>
+                    <th>Rank</th>
+                  </tr>
+                </thead>
+                <tbody id="ranking-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Created for a project on signals, data, and equity.</p>
+      <p>This resource is intended for educational use.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
