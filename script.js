@@ -1,18 +1,5 @@
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
-const scoreButton = document.querySelector("#score-button");
-const scoreOutput = document.querySelector("#score-output");
-
-const rankingBody = document.querySelector("#ranking-body");
-const rangeEngage = document.querySelector("#w-engage");
-const rangeQuality = document.querySelector("#w-quality");
-const rangeRisk = document.querySelector("#w-risk");
-const rangeDiversity = document.querySelector("#w-diversity");
-const labelEngage = document.querySelector("#label-engage");
-const labelQuality = document.querySelector("#label-quality");
-const labelRisk = document.querySelector("#label-risk");
-const labelDiversity = document.querySelector("#label-diversity");
-const modeButtons = document.querySelectorAll(".mode-button");
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
@@ -28,124 +15,154 @@ if (navToggle && nav) {
   });
 }
 
-if (scoreButton && scoreOutput) {
-  scoreButton.addEventListener("click", () => {
-    const applicantAScore = 4;
-    const applicantBScore = 0;
-    scoreOutput.textContent =
-      "Sample result: Applicant A = " +
-      applicantAScore +
-      ", Applicant B = " +
-      applicantBScore +
-      ". Applicant A ranks higher under this signal configuration.";
-  });
+const anchorLinks = Array.from(document.querySelectorAll(".site-nav a[href^='#']"));
+if (anchorLinks.length > 0) {
+  const sections = anchorLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const updateActiveLink = () => {
+    const offset = window.scrollY + 120;
+    let currentId = sections[0]?.id || "home";
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= offset) {
+        currentId = section.id;
+      }
+    });
+
+    anchorLinks.forEach((link) => {
+      const isActive = link.getAttribute("href") === `#${currentId}`;
+      link.classList.toggle("active", isActive);
+    });
+  };
+
+  updateActiveLink();
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
 }
 
+const engagementInput = document.querySelector("#w-engagement");
+const qualityInput = document.querySelector("#w-quality");
+const riskInput = document.querySelector("#w-risk");
+const diversityInput = document.querySelector("#w-diversity");
+const creatorInput = document.querySelector("#w-creator");
+const rankingBody = document.querySelector("#ranking-body");
+
+const engagementValue = document.querySelector("#v-engagement");
+const qualityValue = document.querySelector("#v-quality");
+const riskValue = document.querySelector("#v-risk");
+const diversityValue = document.querySelector("#v-diversity");
+const creatorValue = document.querySelector("#v-creator");
+
 if (
+  engagementInput &&
+  qualityInput &&
+  riskInput &&
+  diversityInput &&
+  creatorInput &&
   rankingBody &&
-  rangeEngage &&
-  rangeQuality &&
-  rangeRisk &&
-  rangeDiversity &&
-  labelEngage &&
-  labelQuality &&
-  labelRisk &&
-  labelDiversity
+  engagementValue &&
+  qualityValue &&
+  riskValue &&
+  diversityValue &&
+  creatorValue
 ) {
-  const candidates = [
-    { name: "A: Context-rich explainer", engagement: 0.61, quality: 0.92, risk: 0.08, diversity: 0.22 },
-    { name: "B: Polarizing short rant", engagement: 0.74, quality: 0.31, risk: 0.73, diversity: 0.08 },
-    { name: "C: Fact-check breakdown", engagement: 0.57, quality: 0.95, risk: 0.05, diversity: 0.34 },
-    { name: "D: Community issue thread", engagement: 0.5, quality: 0.7, risk: 0.2, diversity: 0.43 }
+  const items = [
+    {
+      name: "Calm news explainer",
+      engagement: 0.48,
+      quality: 0.9,
+      risk: 0.08,
+      diversity: 0.32,
+      creatorExposure: 0.22
+    },
+    {
+      name: "Viral outrage clip",
+      engagement: 0.93,
+      quality: 0.26,
+      risk: 0.89,
+      diversity: 0.06,
+      creatorExposure: 0.18
+    },
+    {
+      name: "Fact-checking post",
+      engagement: 0.57,
+      quality: 0.95,
+      risk: 0.05,
+      diversity: 0.38,
+      creatorExposure: 0.28
+    },
+    {
+      name: "Small creator essay",
+      engagement: 0.44,
+      quality: 0.84,
+      risk: 0.12,
+      diversity: 0.58,
+      creatorExposure: 0.96
+    },
+    {
+      name: "Community safety update",
+      engagement: 0.51,
+      quality: 0.87,
+      risk: 0.1,
+      diversity: 0.66,
+      creatorExposure: 0.72
+    }
   ];
 
-  const presets = {
-    engagement: { engage: 0.85, quality: 0.05, risk: 0.05, diversity: 0.05 },
-    quality: { engage: 0.6, quality: 0.25, risk: 0.1, diversity: 0.05 },
-    fairness: { engage: 0.45, quality: 0.25, risk: 0.15, diversity: 0.15 }
+  const sliderMap = [
+    { input: engagementInput, output: engagementValue },
+    { input: qualityInput, output: qualityValue },
+    { input: riskInput, output: riskValue },
+    { input: diversityInput, output: diversityValue },
+    { input: creatorInput, output: creatorValue }
+  ];
+
+  const getWeights = () => ({
+    engagement: Number(engagementInput.value),
+    quality: Number(qualityInput.value),
+    risk: Number(riskInput.value),
+    diversity: Number(diversityInput.value),
+    creator: Number(creatorInput.value)
+  });
+
+  const updateLabels = () => {
+    sliderMap.forEach(({ input, output }) => {
+      output.textContent = Number(input.value).toFixed(2);
+    });
   };
 
-  const scoreCandidate = (item, weights) =>
-    weights.engage * item.engagement +
-    weights.quality * item.quality -
-    weights.risk * item.risk +
-    weights.diversity * item.diversity;
-
-  const setLabels = () => {
-    labelEngage.textContent = Number(rangeEngage.value).toFixed(2);
-    labelQuality.textContent = Number(rangeQuality.value).toFixed(2);
-    labelRisk.textContent = Number(rangeRisk.value).toFixed(2);
-    labelDiversity.textContent = Number(rangeDiversity.value).toFixed(2);
-  };
+  const scoreItem = (item, w) =>
+    w.engagement * item.engagement +
+    w.quality * item.quality -
+    w.risk * item.risk +
+    w.diversity * item.diversity +
+    w.creator * item.creatorExposure;
 
   const renderRanking = () => {
-    const weights = {
-      engage: Number(rangeEngage.value),
-      quality: Number(rangeQuality.value),
-      risk: Number(rangeRisk.value),
-      diversity: Number(rangeDiversity.value)
-    };
-
-    const ranked = candidates
-      .map((item) => ({ ...item, final: scoreCandidate(item, weights) }))
-      .sort((a, b) => b.final - a.final);
+    const weights = getWeights();
+    const ranked = items
+      .map((item) => ({
+        name: item.name,
+        score: scoreItem(item, weights)
+      }))
+      .sort((a, b) => b.score - a.score);
 
     rankingBody.innerHTML = "";
-    ranked.forEach((item, index) => {
+    ranked.forEach((item, idx) => {
       const row = document.createElement("tr");
-      row.innerHTML =
-        "<td>" +
-        item.name +
-        "</td><td>" +
-        item.engagement.toFixed(2) +
-        "</td><td>" +
-        item.quality.toFixed(2) +
-        "</td><td>" +
-        item.risk.toFixed(2) +
-        "</td><td>" +
-        item.diversity.toFixed(2) +
-        "</td><td>" +
-        item.final.toFixed(3) +
-        "</td><td>" +
-        (index + 1) +
-        "</td>";
+      row.innerHTML = `<td>${item.name}</td><td>${item.score.toFixed(3)}</td><td>${idx + 1}</td>`;
       rankingBody.appendChild(row);
     });
   };
 
-  const setActiveModeButton = (mode) => {
-    modeButtons.forEach((button) => {
-      button.classList.toggle("active-mode", button.dataset.mode === mode);
-    });
-  };
-
-  const applyPreset = (mode) => {
-    const weights = presets[mode];
-    if (!weights) {
-      return;
-    }
-    rangeEngage.value = weights.engage;
-    rangeQuality.value = weights.quality;
-    rangeRisk.value = weights.risk;
-    rangeDiversity.value = weights.diversity;
-    setLabels();
-    renderRanking();
-    setActiveModeButton(mode);
-  };
-
-  [rangeEngage, rangeQuality, rangeRisk, rangeDiversity].forEach((input) => {
+  sliderMap.forEach(({ input }) => {
     input.addEventListener("input", () => {
-      setLabels();
+      updateLabels();
       renderRanking();
-      setActiveModeButton("");
     });
   });
 
-  modeButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      applyPreset(button.dataset.mode);
-    });
-  });
-
-  applyPreset("fairness");
+  updateLabels();
+  renderRanking();
 }

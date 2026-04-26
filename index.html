@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Algorithmic Signals and Social Inequality: How Data Shapes Opportunity in the Digital Age</title>
+    <title>Who Gets Seen? | Social Media Algorithms, Visibility, and Equity</title>
     <meta
       name="description"
-      content="A course resource on social media recommendation systems, signals, data, and equity."
+      content="Educational website about how social media recommendation algorithms shape visibility, fairness, and public discourse."
     >
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body id="home">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand-mark">AS</span>
-        <span class="brand-text">Algorithmic Signals Lab</span>
+      <a class="brand" href="#home" aria-label="Back to top">
+        <span class="brand-mark">WG</span>
+        <span class="brand-text">WHO GETS SEEN?</span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -25,166 +27,291 @@
       </button>
 
       <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="signals.html">Signals &amp; Data</a>
-        <a href="bias.html">Bias</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="resources.html">Resources</a>
+        <a class="active" href="#home">Home</a>
+        <a href="#question">Main Question</a>
+        <a href="#system">System</a>
+        <a href="#signals">Signals</a>
+        <a href="#cases">Cases</a>
+        <a href="#lab">Ranking Lab</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#takeaways">Takeaways</a>
+        <a href="#sources">Sources</a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero hero-home">
-        <div class="hero-copy">
-          <p class="eyebrow">Course Website</p>
-          <h1>Algorithmic Signals and Social Inequality</h1>
-          <p>
-            A web-based resource explaining how data-driven systems use signals to make decisions, and how those decisions can affect fairness, access, and opportunity.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="signals.html">Start Learning</a>
-            <a class="button button-secondary" href="case-studies.html">View Case Studies</a>
+    <main id="main-content">
+      <section class="hero section-shell">
+        <span class="sticker">Educational Resource</span>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Social Media Recommendation Algorithms and Equity</p>
+            <h1>WHO GETS SEEN?</h1>
+            <p class="subtitle">
+              How social media recommendation algorithms turn behavioral signals into visibility, influence, and inequality.
+            </p>
+            <p>
+              Your feed is not just a timeline. It is a ranked system shaped by clicks, watch time, shares, comments, and hidden platform priorities. This site explains how those signals become decisions and why those decisions matter for fairness.
+            </p>
+            <div class="hero-actions">
+              <a class="neo-button neo-button-yellow" href="#question">Start Exploring</a>
+              <a class="neo-button neo-button-blue" href="#lab">Try the Ranking Lab</a>
+            </div>
           </div>
-        </div>
 
-        <div class="signal-graphic" aria-label="Data points flowing into an algorithm and generating different outcomes">
-          <div class="signal-column">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-          <div class="flow-line"></div>
-          <div class="algorithm-box">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16"></path>
-              <circle cx="8" cy="7" r="1.3"></circle>
-              <circle cx="15" cy="12" r="1.3"></circle>
-              <circle cx="11" cy="17" r="1.3"></circle>
-            </svg>
-            <strong>Algorithm Box</strong>
-          </div>
-          <div class="flow-line"></div>
-          <div class="outcomes">
-            <article>
-              <h3>Group A</h3>
-              <p>Higher visibility</p>
-            </article>
-            <article>
-              <h3>Group B</h3>
-              <p>Lower visibility</p>
-            </article>
+          <div class="machine-diagram" role="img" aria-label="User Signals to Ranking Model to Feed Visibility to Feedback Loop">
+            <div class="machine-node">USER SIGNALS</div>
+            <div class="machine-arrow">-&gt;</div>
+            <div class="machine-node">RANKING MODEL</div>
+            <div class="machine-arrow">-&gt;</div>
+            <div class="machine-node">FEED VISIBILITY</div>
+            <div class="machine-arrow">-&gt;</div>
+            <div class="machine-node">FEEDBACK LOOP</div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-head">
-          <h2>What This Site Explores</h2>
-          <p>
-            This site explains how algorithmic systems use data signals to make decisions in areas such as hiring, credit, policing, education, and social media. These systems may appear neutral, but they often reflect the social inequalities already present in the data used to build them.
-          </p>
-        </div>
+      <section id="question" class="section-shell section-block">
+        <span class="sticker">The Main Question</span>
+        <h2>When platforms optimize for engagement, what else do they amplify?</h2>
         <div class="question-grid">
-          <article class="card"><p>What counts as a signal in data systems?</p></article>
-          <article class="card"><p>How do algorithms turn signals into decisions?</p></article>
-          <article class="card"><p>Why can data-driven decisions reproduce inequality?</p></article>
-          <article class="card"><p>What can be done to make these systems more fair?</p></article>
+          <article class="neo-card">
+            <h3>Visibility</h3>
+            <p>Who gets recommended and repeatedly placed in front of users?</p>
+          </article>
+          <article class="neo-card">
+            <h3>Risk</h3>
+            <p>What harmful content spreads faster under engagement-heavy ranking goals?</p>
+          </article>
+          <article class="neo-card">
+            <h3>Power</h3>
+            <p>Who defines and governs the ranking rules that shape public attention?</p>
+          </article>
         </div>
       </section>
 
-      <section class="section section-alt">
-        <div class="section-head">
-          <h2>Quick Navigation</h2>
-        </div>
-        <div class="quick-nav-grid quick-nav-five">
-          <a class="card link-card" href="signals.html">
-            <span class="step">1</span>
-            <h3>Signals &amp; Data</h3>
-            <p>Learn what signals are and how they become inputs for algorithms.</p>
-          </a>
-          <a class="card link-card" href="bias.html">
-            <span class="step">2</span>
-            <h3>Bias &amp; Inequality</h3>
-            <p>Understand how bias enters data systems.</p>
-          </a>
-          <a class="card link-card" href="case-studies.html">
-            <span class="step">3</span>
-            <h3>Case Studies</h3>
-            <p>Explore examples from hiring, credit scoring, policing, and social media.</p>
-          </a>
-          <a class="card link-card" href="solutions.html">
-            <span class="step">4</span>
-            <h3>Solutions</h3>
-            <p>Review methods for improving fairness and accountability.</p>
-          </a>
-          <a class="card link-card" href="resources.html">
-            <span class="step">5</span>
-            <h3>Resources</h3>
-            <p>Find readings, reports, and further research.</p>
-          </a>
+      <section id="system" class="section-shell section-block">
+        <span class="sticker">From Signals to Feeds</span>
+        <h2>From Signals to Feeds</h2>
+        <div class="pipeline">
+          <div class="pipeline-node">User Behavior</div>
+          <div class="pipeline-arrow">-&gt;</div>
+          <div class="pipeline-node">Signal Collection</div>
+          <div class="pipeline-arrow">-&gt;</div>
+          <div class="pipeline-node">Candidate Retrieval</div>
+          <div class="pipeline-arrow">-&gt;</div>
+          <div class="pipeline-node">Ranking Score</div>
+          <div class="pipeline-arrow">-&gt;</div>
+          <div class="pipeline-node">Re-ranking + Moderation</div>
+          <div class="pipeline-arrow">-&gt;</div>
+          <div class="pipeline-node">Feed Display</div>
+          <div class="pipeline-arrow">-&gt;</div>
+          <div class="pipeline-node">Feedback Loop</div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-head">
-          <h2>Core Concepts</h2>
+      <section id="signals" class="section-shell section-block">
+        <span class="sticker">Signals Are Not Neutral</span>
+        <h2>Why Behavioral Data Can Produce Unequal Outcomes</h2>
+        <div class="signals-grid">
+          <article class="neo-card">
+            <h3>Watch Time</h3>
+            <p><strong>Measures:</strong> How long a user stays with content.</p>
+            <p><strong>Why platforms use it:</strong> It predicts attention and retention.</p>
+            <p><strong>Equity risk:</strong> Outrage and fear can also keep people watching.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Likes</h3>
+            <p><strong>Measures:</strong> Lightweight positive feedback.</p>
+            <p><strong>Why platforms use it:</strong> Fast engagement signal.</p>
+            <p><strong>Equity risk:</strong> Can favor already-visible groups and styles.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Shares</h3>
+            <p><strong>Measures:</strong> Propagation potential.</p>
+            <p><strong>Why platforms use it:</strong> Strong predictor of virality.</p>
+            <p><strong>Equity risk:</strong> Sensational content can spread disproportionately.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Comments</h3>
+            <p><strong>Measures:</strong> Depth of interaction.</p>
+            <p><strong>Why platforms use it:</strong> Indicates high engagement.</p>
+            <p><strong>Equity risk:</strong> Conflict-heavy threads can dominate ranking.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Follows</h3>
+            <p><strong>Measures:</strong> Network preference and trust.</p>
+            <p><strong>Why platforms use it:</strong> Supports personalization quality.</p>
+            <p><strong>Equity risk:</strong> Reinforces network centrality and incumbency.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Search History</h3>
+            <p><strong>Measures:</strong> Prior topics and intent.</p>
+            <p><strong>Why platforms use it:</strong> Improves recommendation relevance.</p>
+            <p><strong>Equity risk:</strong> Can lock users into narrow content paths.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Location / Language</h3>
+            <p><strong>Measures:</strong> Regional and linguistic context.</p>
+            <p><strong>Why platforms use it:</strong> Improves local matching.</p>
+            <p><strong>Equity risk:</strong> Can become proxies for social inequality.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Device / Account Settings</h3>
+            <p><strong>Measures:</strong> Technical and account-level metadata.</p>
+            <p><strong>Why platforms use it:</strong> Performance and compatibility.</p>
+            <p><strong>Equity risk:</strong> May encode infrastructure and access gaps.</p>
+          </article>
+          <article class="neo-card">
+            <h3>Negative Feedback</h3>
+            <p><strong>Measures:</strong> "Not interested" and report behavior.</p>
+            <p><strong>Why platforms use it:</strong> Helps suppress low-value content.</p>
+            <p><strong>Equity risk:</strong> Reporting patterns can be socially uneven.</p>
+          </article>
         </div>
-        <div class="concept-icons">
-          <article class="card concept-card">
-            <div class="icon-wrap">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 8h16M4 12h16M4 16h16"></path>
-                <circle cx="8" cy="8" r="1"></circle>
-                <circle cx="15" cy="12" r="1"></circle>
-                <circle cx="10" cy="16" r="1"></circle>
-              </svg>
-            </div>
-            <h3>Data</h3>
+      </section>
+
+      <section id="cases" class="section-shell section-block">
+        <span class="sticker">Where Algorithmic Harms Appear</span>
+        <h2>Where Algorithmic Harms Appear</h2>
+        <div class="case-grid">
+          <article class="neo-card">
+            <h3>Misinformation Amplification</h3>
+            <p><strong>What happens:</strong> High-arousal false claims gain rapid exposure.</p>
+            <p><strong>Why signals matter:</strong> Shares and watch time can reward controversy.</p>
+            <p><strong>Why equity matters:</strong> Vulnerable communities face uneven harm.</p>
+            <p><strong>Takeaway:</strong> Virality control is a fairness issue.</p>
           </article>
-          <article class="card concept-card">
-            <div class="icon-wrap">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 19h14V5H5z"></path>
-                <path d="M9 9h6M9 12h4M9 15h6"></path>
-              </svg>
-            </div>
-            <h3>Algorithm</h3>
+          <article class="neo-card">
+            <h3>Political Polarization</h3>
+            <p><strong>What happens:</strong> Users are repeatedly exposed to ideologically aligned streams.</p>
+            <p><strong>Why signals matter:</strong> Prior engagement narrows future recommendations.</p>
+            <p><strong>Why equity matters:</strong> Public discourse becomes less shared.</p>
+            <p><strong>Takeaway:</strong> Exposure design shapes civic outcomes.</p>
           </article>
-          <article class="card concept-card">
-            <div class="icon-wrap">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 6l12 12M18 6L6 18"></path>
-              </svg>
-            </div>
-            <h3>Bias</h3>
+          <article class="neo-card">
+            <h3>Creator Visibility Inequality</h3>
+            <p><strong>What happens:</strong> Established creators compound reach over time.</p>
+            <p><strong>Why signals matter:</strong> Past exposure drives future ranking score.</p>
+            <p><strong>Why equity matters:</strong> New and marginalized creators struggle to break in.</p>
+            <p><strong>Takeaway:</strong> Ranking can reproduce opportunity gaps.</p>
           </article>
-          <article class="card concept-card">
-            <div class="icon-wrap">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12h16"></path>
-                <path d="M12 4v16"></path>
-                <circle cx="12" cy="12" r="8"></circle>
-              </svg>
-            </div>
-            <h3>Equity</h3>
+          <article class="neo-card">
+            <h3>Moderation and Demotion Bias</h3>
+            <p><strong>What happens:</strong> Some communities perceive uneven moderation and downranking.</p>
+            <p><strong>Why signals matter:</strong> Risk labels and trust scores alter distribution.</p>
+            <p><strong>Why equity matters:</strong> Reduced visibility changes participation power.</p>
+            <p><strong>Takeaway:</strong> Moderation and ranking are linked fairness systems.</p>
           </article>
-          <article class="card concept-card">
-            <div class="icon-wrap">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"></path>
-              </svg>
+        </div>
+      </section>
+
+      <section id="lab" class="section-shell section-block">
+        <span class="sticker">Interactive Ranking Lab</span>
+        <h2>Try It: Design the Feed</h2>
+        <p class="lab-note">
+          This is a simplified educational model. It does not simulate any real platform.
+        </p>
+
+        <div class="lab-grid">
+          <div class="neo-card controls-card">
+            <label for="w-engagement">Engagement Weight <span id="v-engagement">0.35</span></label>
+            <input id="w-engagement" type="range" min="0" max="1" step="0.01" value="0.35">
+
+            <label for="w-quality">Quality Weight <span id="v-quality">0.25</span></label>
+            <input id="w-quality" type="range" min="0" max="1" step="0.01" value="0.25">
+
+            <label for="w-risk">Risk Penalty <span id="v-risk">0.20</span></label>
+            <input id="w-risk" type="range" min="0" max="1" step="0.01" value="0.20">
+
+            <label for="w-diversity">Diversity Weight <span id="v-diversity">0.10</span></label>
+            <input id="w-diversity" type="range" min="0" max="1" step="0.01" value="0.10">
+
+            <label for="w-creator">Creator Exposure Weight <span id="v-creator">0.10</span></label>
+            <input id="w-creator" type="range" min="0" max="1" step="0.01" value="0.10">
+          </div>
+
+          <div class="neo-card results-card">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Content Item</th>
+                    <th>Final Score</th>
+                    <th>Rank</th>
+                  </tr>
+                </thead>
+                <tbody id="ranking-body"></tbody>
+              </table>
             </div>
-            <h3>Policy</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="solutions" class="section-shell section-block">
+        <span class="sticker">How Can Feeds Be Made Fairer?</span>
+        <h2>Three Paths to Better Outcomes</h2>
+        <div class="solutions-grid">
+          <article class="neo-card">
+            <h3>Technical Fixes</h3>
+            <ul>
+              <li>Fairness constraints in ranking objectives</li>
+              <li>Diversity re-ranking</li>
+              <li>Risk penalties for harmful content</li>
+              <li>Exposure audits across groups</li>
+            </ul>
           </article>
+          <article class="neo-card">
+            <h3>Product Design Fixes</h3>
+            <ul>
+              <li>"Why am I seeing this?" explanations</li>
+              <li>Reset recommendation controls</li>
+              <li>Chronological mode</li>
+              <li>Topic-level personalization settings</li>
+            </ul>
+          </article>
+          <article class="neo-card">
+            <h3>Policy Fixes</h3>
+            <ul>
+              <li>Transparency reporting requirements</li>
+              <li>Independent algorithm audits</li>
+              <li>Researcher access to platform data</li>
+              <li>Appeal and correction systems</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="takeaways" class="section-shell section-block">
+        <span class="sticker">What You Should Remember</span>
+        <h2>Key Takeaways</h2>
+        <div class="takeaway-grid">
+          <article class="neo-card">Algorithms do not simply reflect user preference; they shape it.</article>
+          <article class="neo-card">Engagement is measurable, but not always meaningful.</article>
+          <article class="neo-card">Signals can become proxies for social inequality.</article>
+          <article class="neo-card">Visibility is a form of power.</article>
+          <article class="neo-card">Fairer feeds require technical, design, and policy changes.</article>
+        </div>
+      </section>
+
+      <section id="sources" class="section-shell section-block">
+        <span class="sticker">Further Reading</span>
+        <h2>Further Reading</h2>
+        <div class="neo-card source-card">
+          <ul>
+            <li><a href="https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/" target="_blank" rel="noreferrer">YouTube: On YouTube's Recommendation System</a></li>
+            <li><a href="https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you" target="_blank" rel="noreferrer">TikTok: How TikTok Recommends Videos #ForYou</a></li>
+            <li><a href="https://transparency.meta.com/features/ranking-and-content/" target="_blank" rel="noreferrer">Meta Transparency Center: Ranking and Content</a></li>
+            <li><a href="https://www.propublica.org/article/facebook-hate-speech-censorship-internal-documents-algorithms" target="_blank" rel="noreferrer">ProPublica: Facebook hate speech moderation investigation</a></li>
+            <li><a href="https://www.ftc.gov/system/files/ftc_gov/pdf/Social-Media-6b-Report-9-11-2024.pdf" target="_blank" rel="noreferrer">FTC 2024 report on social media and video streaming data practices</a></li>
+            <li><a href="https://collaborate.princeton.edu/en/publications/asymmetric-ideological-segregation-in-exposure-to-political-news-/" target="_blank" rel="noreferrer">Academic research on feed algorithms and political exposure</a></li>
+            <li><a href="https://arxiv.org/pdf/2206.03761" target="_blank" rel="noreferrer">Research on fairness in recommender systems</a></li>
+          </ul>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Created for a project on signals, data, and equity.</p>
-      <p>This resource is intended for educational use.</p>
+      <p>Created for ESE 3590 project.</p>
     </footer>
 
     <script src="script.js"></script>
